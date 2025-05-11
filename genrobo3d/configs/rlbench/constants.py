@@ -2,17 +2,21 @@
 def get_robot_workspace(real_robot=False, use_vlm=False):
     if real_robot:  
         # ur5 robotics room
-        if use_vlm:
-            TABLE_HEIGHT = 0.0 # meters
-            X_BBOX = (-0.60, 0.2)        # 0 is the robot base
-            Y_BBOX = (-0.54, 0.54)  # 0 is the robot base
-            Z_BBOX = (-0.02, 0.75)      # 0 is the table
-        else:
-            TABLE_HEIGHT = 0.01 # meters
-            X_BBOX = (-0.60, 0.2)        # 0 is the robot base
-            Y_BBOX = (-0.54, 0.54)  # 0 is the robot base
-            Z_BBOX = (0, 0.75)      # 0 is the table
-        
+        # if use_vlm:
+        #     TABLE_HEIGHT = 0.0 # meters
+        #     X_BBOX = (-0.60, 0.2)        # 0 is the robot base
+        #     Y_BBOX = (-0.54, 0.54)  # 0 is the robot base
+        #     Z_BBOX = (-0.02, 0.75)      # 0 is the table
+        # else:
+        #     TABLE_HEIGHT = 0.01 # meters
+        #     X_BBOX = (-0.60, 0.2)        # 0 is the robot base
+        #     Y_BBOX = (-0.54, 0.54)  # 0 is the robot base
+        #     Z_BBOX = (0, 0.75)      # 0 is the table
+        # MBZUAI
+        TABLE_HEIGHT = 0.024
+        Y_BBOX = (-0.45, 0.46)
+        X_BBOX = (0.12, 0.75)
+        Z_BBOX = (0.0, 0.75)
     else:
         # rlbench workspace
         TABLE_HEIGHT = 0.7505 # meters
