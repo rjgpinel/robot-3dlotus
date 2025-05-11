@@ -48,7 +48,6 @@ class SimplePolicyDataset(Dataset):
         assert pos_type in ['cont', 'disc']
         assert rot_type in ['quat', 'rot6d', 'euler', 'euler_delta', 'euler_disc']
         assert rm_robot in ['none', 'gt', 'box', 'box_keep_gripper']
-
         self.taskvar_instrs = json.load(open(taskvar_instr_file))
         self.instr_embeds = np.load(instr_embed_file, allow_pickle=True).item()
         if instr_embed_type == 'last':

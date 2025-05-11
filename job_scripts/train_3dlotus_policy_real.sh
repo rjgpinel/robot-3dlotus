@@ -3,7 +3,7 @@
 #SBATCH --nodes 1
 #SBATCH --ntasks 1
 #SBATCH --cpus-per-task=8
-#SBATCH --gres=gpu:a100:1       # v100, rtx6000, rtx8000
+#SBATCH --gres=gpu:h100:1       # v100, rtx6000, rtx8000
 #SBATCH --hint=nomultithread
 #SBATCH --time=48:00:00
 #SBATCH --mem=40G
@@ -47,10 +47,10 @@ srun python genrobo3d/train/train_simple_policy.py \
     VAL_DATASET.use_val True \
     TRAIN_DATASET.data_dir /home/rgarciap/scratch/grail_data/keysteps_bbox_pcd_cam3 \
     VAL_DATASET.data_dir /home/rgarciap/scratch/grail_data/keysteps_bbox_pcd_cam3 \
-    TRAIN_DATASET.instr_embed_file /home/rgarcia/scratch/grail_data/instr_embeds_clip.npy \
+    TRAIN_DATASET.instr_embed_file /home/rgarciap/scratch/grail_data/instr_embeds_clip.npy \
     VAL_DATASET.instr_embed_file /home/rgarciap/scratch/grail_data/instr_embeds_clip.npy \
     TRAIN_DATASET.taskvar_instr_file assets/real_robot/taskvars_train.json \
-    VAL_DATASET.taskvar_instr_file assets/real_robot/taskbars_train.json \
+    VAL_DATASET.taskvar_instr_file assets/real_robot/taskvars_train.json \
     TRAIN_DATASET.taskvar_file assets/real_robot/taskvars_train.json \
     VAL_DATASET.taskvar_file assets/real_robot/taskvars_train.json \
     TRAIN_DATASET.num_points ${npoints} VAL_DATASET.num_points ${npoints} \
