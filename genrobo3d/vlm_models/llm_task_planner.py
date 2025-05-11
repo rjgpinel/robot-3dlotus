@@ -115,7 +115,7 @@ class LlamaTaskPlanner(object):
         trn_taskvars = set(json.load(open(os.path.join(self.asset_dir, 'taskvars_train.json'))))
         self.taskvar_instructions = {
             taskvar: [instr+'.' for instr in instrs] for taskvar, instrs in \
-                json.load(open(os.path.join(self.asset_dir, 'taskvars_instructions_new.json'))).items() \
+                json.load(open(os.path.join(self.asset_dir, 'taskvars_instructions.json'))).items() \
             if taskvar in trn_taskvars
         }
 

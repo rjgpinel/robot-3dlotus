@@ -1,0 +1,46 @@
+pipeline:
+    restart: True
+    real_robot: True
+
+llm_planner:
+    # ckpt_dir: '/scratch/shichen/datasets/pretrained/meta-llama/Meta-Llama-3-8B-Instruct'
+    # prompt_dir: 'prompts/rlbench'
+    master_port: 8010
+    use_groundtruth: False
+
+    gt_plan_file: 'prompts/real_robot/in_context_examples.txt'
+    taskvar_instr_file: 'assets/gembench/real_robot/taskvars_real_robot.json'
+
+    # ckpt_dir: '/scratch/shichen/datasets/pretrained/meta-llama/Meta-Llama-3-8B-Instruct'
+    # groq_model: null
+    ckpt_dir: "/home/rgarciap/scratch/Meta-Llama-3-8B-Instruct/original/" # has some socket problems on the port with flask
+    groq_model: 'llama-3.1-8b-instant'
+    bert_path: 'sentence-transformers/all-MiniLM-L6-v2'
+    cache_file: null #'data/experiments_icra25/real_robot/motion_planner_ptv3/llama3-8b-cache.jsonl'
+    prompt_dir: 'prompts/real_robot/'
+    taskvars_instructions_file: 'assets/gembench/real_robot/taskvars_instructions_real_robot.json'
+    taskvars_train_file: 'assets/gembench/real_robot/taskvars_real_robot.json'
+
+    # old pipeline
+    train_file: 'assets/real_robot/taskvars_real_robot.json'
+    asset_dir: 'assets/real_robot/'
+
+object_grounding:
+    use_groundtruth: False
+    owlv2_path: "google/owlv2-large-patch14-ensemble"
+    sam_path: "facebook/sam-vit-huge"
+
+motion_planner:
+    expr_dir: '/home/rgarciap/scratch/ckpt_real_robot/real_robot/3dlotusplus/v1/'
+    ckpt_step: 50000
+    run_action_step: 1
+
+    # automatically setup
+    checkpoint: ''
+    config_file: ''
+    pred_dir: '/home/rgarciap/scratch/preds_debug/'
+    save_obs_outs: True
+    enable_flashattn: True
+
+clip_path: 'openai/clip-vit-base-patch32'
+save_obs_outs_dir: '/home/rgarciap/scratch/ckpt_real_robot/real_robot/3dlotusplus/v1'

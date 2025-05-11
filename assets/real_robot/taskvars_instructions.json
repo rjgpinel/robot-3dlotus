@@ -1,0 +1,104 @@
+{
+  "real_stack_cup+0": [
+    "stack the yellow cup on top of the pink cup",
+    "place the yellow cup onto the pink cup",
+    "put the yellow cup on top of the pink one",
+    "pick up and set the yellow cup down into the pink cup",
+    "create a stack of cups with the pink cup as its base and the yellow on top of it",
+    "keeping the pink cup on the table, stack the yellow one onto it"
+  ],
+  "real_stack_cup+1": [
+    "stack the navy cup on top of the yellow cup",
+    "place the navy cup onto the yellow cup",
+    "put the navy cup on top of the yellow one",
+    "pick up and set the navy cup down into the yellow cup",
+    "create a stack of cups with the yellow cup as its base and the navy on top of it",
+    "keeping the yellow cup on the table, stack the navy one onto it"
+  ],
+  "real_stack_cup+2": [
+    "stack the pink cup on top of the cyan cup",
+    "place the pink cup onto the cyan cup",
+    "put the pink cup on top of the cyan one",
+    "pick up and set the pink cup down into the cyan cup",
+    "create a stack of cups with the cyan cup as its base and the pink on top of it",
+    "keeping the cyan cup on the table, stack the pink one onto it"
+  ],
+  "real_stack_cup+3": [
+    "stack the cyan cup on top of the navy cup",
+    "place the cyan cup onto the navy cup",
+    "put the cyan cup on top of the navy one",
+    "pick up and set the cyan cup down into the navy cup",
+    "create a stack of cups with the navy cup as its base and the cyan on top of it",
+    "keeping the navy cup on the table, stack the cyan one onto it"
+  ],
+  "real_stack_cup+4": [
+    "stack the pink cup on top of the yellow cup",
+    "place the pink cup onto the yellow cup",
+    "put the pink cup on top of the yellow one",
+    "pick up and set the pink cup down into the yellow cup",
+    "create a stack of cups with the yellow cup as its base and the pink on top of it",
+    "keeping the yellow cup on the table, stack the pink one onto it"
+  ],
+  "real_put_item_in_drawer+0": [
+    "put the frog toy in the top part of the drawer",
+    "take the frog toy and put it in the top compartiment of the drawer"
+  ],
+  "real_put_item_in_drawer+1": [
+    "put the pink cube in the middle part of the drawer",
+    "take the pink cube and put it in the middle compartment of the drawer"
+  ],
+  "real_put_item_in_drawer+2": [
+    "put the strawberry in the top part of the drawer",
+    "take the strawberry and put it in the top compartment of the drawer"
+  ],
+  "real_open_drawer+0": [
+    "open top drawer",
+    "grip the top handle and pull the top drawer open",
+    "slide the top drawer open"
+  ],
+  "real_open_drawer+1": [
+    "open middle drawer",
+    "grip the middle handle and pull the middle drawer open",
+    "slide the middle drawer open"
+  ],
+  "real_put_item_in_cabinet+0": [
+    "put the rubik's cube in the top part of the cabinet",
+    "take the rubik's cube and put it in the top compartiment of the cabinet"
+  ],
+  "real_put_item_in_cabinet+1": [
+    "put the baseball in the bottom part of the cabinet",
+    "take the baseball and put it in the bottom compartment of the cabinet"
+  ],
+  "real_put_item_in_cabinet+2": [
+    "put the lemon in the top part of the cabinet",
+    "take the lemon and put it in the top compartment of the cabinet"
+  ],
+  "real_put_fruit_in_box+0": [
+    "put the strawberry in the box",
+    "take the strawberry and put it inside the box"
+  ],
+  "real_put_fruit_in_box+1": [
+    "put the peach in the box",
+    "take the peach and put it inside the box"
+  ],
+  "real_put_fruit_in_box+2": [
+    "put the banana in the box",
+    "take the banana and put it inside the box"
+  ],
+  "real_put_fruit_in_box+3": [
+    "put the lemon in the box",
+    "take the lemon and put it inside the box"
+  ],
+  "real_hang_mug+0": [
+    "take the green mug and put it on the middle part of the hanger",
+    "put the green mug on the middle part of the hanger"
+  ],
+  "real_hang_mug+1": [
+    "take the pink mug and put it on the middle part of the hanger",
+    "put the pink mug on the middle part of the hanger"
+  ],
+  "real_hang_mug+2": [
+    "take the blue mug and put it on the top part of the hanger",
+    "put the blue mug on the top part of the hanger"
+  ]
+}

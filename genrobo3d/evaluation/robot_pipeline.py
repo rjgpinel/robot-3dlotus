@@ -223,6 +223,8 @@ class RobotPipeline(object):
     
     def move_grasped_obj_xyz(self, cur_action, prev_pose, obj_xyz):
         # print('move object before', np.mean(obj_xyz, 0), cur_action, prev_pose)
+        obj_xyz = np.copy(obj_xyz)
+
         translation = cur_action[:3] - prev_pose[:3]
         rotation = R.from_quat(cur_action[3:7]).as_euler('xyz') - R.from_quat(prev_pose[3:7]).as_euler('xyz')
         rotation = R.from_euler('xyz', rotation)
@@ -239,7 +241,7 @@ class RobotPipeline(object):
         if step_id == 0:
             cache = EasyDict(
                 valid_actions = [], object_vars = {}, highlevel_plans = [],
-                ret_objs = {}, grasped_obj_name = None, 
+                ret_objs = {}, grasped_obj_name = None,
                 prev_ee_pose = copy.deepcopy(obs_state_dict['gripper'])
             )
             if self.config.motion_planner.save_obs_outs:
@@ -332,18 +334,19 @@ class RobotPipeline(object):
             target_var_xyz = None
 
         zrange = None
-        if plan['object'] is not None and 'drawer' in plan['object']:
-            obj_height = np.concatenate(
-                [obj.pcd_xyz[:, 2] for obj in vlm_results.objects \
-                    if len(obj.captions)==0 or obj.captions[0] != 'robot'], 0
-            )
-            # TODO: there are some noisy robot points
-            obj_height = np.percentile(obj_height, 99) - obj_height.min()
-            # print('obj_height', obj_height, 'obj_name', plan['object'])
-            zrange = self.llm_planner.estimate_height_range(plan['object'], obj_height)
-            # print('zrange', zrange)
-            if zrange is not None:
-                zrange += self.workspace['TABLE_HEIGHT']
+        #if plan['object'] is not None and 'drawer' in plan['object']:
+        #    obj_height = np.concatenate(
+        #        [obj.pcd_xyz[:, 2] for obj in vlm_results.objects \
+        #            if len(obj.captions)==0 or obj.captions[0] != 'robot'], 0
+        #    )
+        #    # TODO: there are some noisy robot points
+        #    obj_height = np.percentile(obj_height, 99) - obj_height.min()
+        #    # print('obj_height', obj_height, 'obj_name', plan['object'])
+        #    zrange = self.llm_planner.estimate_height_range(plan['object'], obj_height)
+        #    # print('zrange', zrange)
+        #    if zrange is not None:
+        #        zrange += self.workspace['TABLE_HEIGHT']
+
         # print(plan)
         if plan['target'] is not None and 'safe' in task_str and ('safe' in plan['target'] or 'shelf' in plan['target']):
             obj_height = np.concatenate(
